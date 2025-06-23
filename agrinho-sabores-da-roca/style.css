@@ -1,0 +1,339 @@
+:root {
+  --cor-primaria: #8B4513;
+  --cor-secundaria: #FFE8D1;
+  --cor-destaque: #CD853F;
+  --cor-clara: #FAF0E6;
+  --cor-escura: #5C4033;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  background: var(--cor-clara);
+  color: var(--cor-escura);
+  line-height: 1.6;
+}
+
+/* Área central */
+.area {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.area-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.imagem-logo {
+  height: 40px;
+  margin-right: 8px;
+}
+.site-title {
+  font-size: 24px;
+  color: var(--cor-primaria);
+}
+
+/* Navegação (oculta no mobile) */
+.navegacao-principal {
+  display: none;
+}
+@media (min-width: 768px) {
+  .navegacao-principal {
+    display: block;
+  }
+  .navegacao-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+  .navegacao-principal a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  .navegacao-principal a:hover {
+    color: var(--cor-destaque);
+  }
+}
+
+/* Hero */
+.secao-principal {
+  background:
+    linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3')
+    center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 16px;
+}
+.titulo-principal {
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+.texto-principal {
+  font-size: 20px;
+  margin-bottom: 32px;
+}
+.botao-encomenda {
+  background: var(--cor-destaque);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.botao-encomenda:hover {
+  background: #B87333;
+}
+
+/* Seções */
+.secao {
+  padding: 64px 0;
+}
+.titulo-secao {
+  font-size: 32px;
+  color: var(--cor-primaria);
+  text-align: center;
+  margin-bottom: 16px;
+}
+.separador {
+  width: 80px;
+  height: 4px;
+  background: var(--cor-destaque);
+  margin: 0 auto 48px;
+}
+
+/* Nossa História */
+.secao-historia {
+  background: var(--cor-secundaria);
+}
+.conteudo-historia {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .conteudo-historia {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+.imagem-historia img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.texto-historia p {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+/* Nossos Produtos */
+.secao-produtos {
+  background: #fff;
+}
+.grade-produtos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .grade-produtos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.cartao-produto {
+  background: var(--cor-secundaria);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.cartao-produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.cartao-produto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.cartao-produto h3 {
+  margin: 16px;
+  font-size: 20px;
+  color: var(--cor-primaria);
+}
+.cartao-produto p {
+  margin: 0 16px 16px;
+}
+.cartao-produto .preco {
+  display: block;
+  margin: 0 16px 16px;
+  font-weight: bold;
+  color: var(--cor-primaria);
+}
+.cartao-produto .botao-encomendar {
+  margin: 0 16px 16px;
+  background: var(--cor-destaque);
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.cartao-produto .botao-encomendar:hover {
+  background: #B87333;
+}
+
+/* Receita da Roça */
+.secao-receita {
+  background: var(--cor-clara);
+  padding: 64px 16px
+}
+.area-receita {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.imagem-receita-central {
+  text-align: center;
+  margin: 32px 0;
+}
+.imagem-receita-central img {
+  max-width: 400px; width:100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.detalhes-receita {
+  display: flex; flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .detalhes-receita { flex-direction: row; }
+}
+.detalhes-receita > div { flex: 1; }
+.detalhes-receita h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: var(--cor-primaria);
+}
+.detalhes-receita ul,
+.detalhes-receita ol {
+  list-style: none;
+  margin: 0; padding: 0;
+  counter-reset: passos;
+}
+.detalhes-receita ul li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+}
+.detalhes-receita ul li::before {
+  content: "✔︎";
+  position: absolute; left:0;
+  color: var(--cor-destaque);
+}
+.detalhes-receita ol li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 16px;
+  counter-increment: passos;
+  line-height: 1.4;
+}
+.detalhes-receita ol li::before {
+  content: counter(passos);
+  position: absolute; left:0; top:0;
+  background: var(--cor-destaque);
+  color:#fff;
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:bold;
+}
+.cta-receita {
+  background: var(--cor-secundaria);
+  padding: 16px;text-align:center;
+  border-top:2px solid var(--cor-destaque);
+}
+.cta-receita p { margin:0;}
+.cta-receita a {
+  color: var(--cor-primaria);
+  font-weight:bold;
+  text-decoration:none;
+  border-bottom:2px solid transparent;
+  transition:border-color 0.3s;
+}
+.cta-receita a:hover { border-color:var(--cor-destaque); }
+
+/* Encomenda */
+.secao-encomenda {
+  background: var(--cor-secundaria);
+  color: var(--cor-primaria);
+  text-align:center;
+  padding:64px 16px;
+}
+.secao-encomenda h2 {
+  font-size:32px; margin-bottom:16px;
+}
+.secao-encomenda p {
+  font-size:18px; margin-bottom:24px;
+}
+.botao-whatsapp {
+  background:#fff;
+  color: var(--cor-primaria);
+  padding:12px 24px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:background 0.3s;
+}
+.botao-whatsapp:hover {
+  background: var(--cor-clara);
+}
+
+/* Rodapé */
+.rodape {
+  background: #a1735d;
+  color:#fff;
+  text-align:center;
+  padding:32px 16px;
+  font-size:14px;
+}
+.rodape .area {
+  display:flex; flex-direction:column; gap:16px;
+}
+@media (min-width: 768px) {
+  .rodape .area {
+    flex-direction:row;
+    justify-content:space-between;
+    text-align:left;
+  }
+}
